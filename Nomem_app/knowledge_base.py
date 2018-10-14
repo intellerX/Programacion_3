@@ -10,11 +10,6 @@ pyDatalog.create_terms('raices, verduras, frutas, carnes, lacteos, granos')
 # Tabla nutricional
 pyDatalog.create_terms('vitamina_a, vitamina_b, vitamina_c, calorias, carbohidratos, proteinas')
 
-# Tipos de comida
-pyDatalog.create_terms('desayuno, almuerzo, cena')
-
-# Estructura comida
-pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 
 # -----------------------------------------------------------------------------------------------
 
@@ -25,6 +20,19 @@ pyDatalog.create_terms('genero, edad, peso, estatura, sedentarismo')
 
 # Enfermedades
 pyDatalog.create_terms('gastrointestinales, diabetes, desnutricion, obesidad')
+
+# Sintomas y soluciones
+pyDatalog.create_terms('tiene_sintoma, solucion')
+
+# ----------------------------------------------------------------------------------------------
+
+# REGLAS
+
+# Tipos de comida
+pyDatalog.create_terms('desayuno, almuerzo, cena')
+
+# Estructura comida
+pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 
 # ----------------------------------------------------------------------------------------------
 
@@ -271,3 +279,45 @@ pyDatalog.create_terms('gastrointestinales, diabetes, desnutricion, obesidad')
 
 # Enfermedades
 
+# Gastrointestinales
+
++gastrointestinales('reflujo_gastroesofagico')
++gastrointestinales('celiaquia')
++gastrointestinales('sindrome_intestino_irritable')
++gastrointestinales('hemorroides')
+
+# Diabetes
+
++diabetes('diabetes_tipo_I')
++diabetes('diabetes_tipo_II')
+
+# Desnutrición
+
++desnutricion('peso_insuficiente')
+
+# Obesidad
+
++obesidad('sobrepeso_tipo_I')
++obesidad('sobrepeso_tipo_II')
++obesidad('obesidad_tipo_I')
++obesidad('obesidad_tipo_II')
++obesidad('obesidad_tipo_III')
+
+# ----------------------------------------------------------------------------------------------
+
+# Sintomas
+
++tiene_sintoma('reflujo_gastroesofagico', 'Estomago_lleno')
++tiene_sintoma('celiaquia', 'mala_respuesta_al_gluten')
++tiene_sintoma('sindrome_intestino_irritable', 'falta_de_fibra')
++tiene_sintoma('hemorroides', 'mucha_sal_o_azucar')
++tiene_sintoma('peso_insuficiente', 'IMC_<18.5')
++tiene_sintoma('sobrepeso_tipo_I', 'IMC_25;26.9')
++tiene_sintoma('sobrepeso_tipo_II', 'IMC_27;29.9')
++tiene_sintoma('sobrepeso_tipo_II', 'preobesidad')
++tiene_sintoma('obesidad_tipo_I', 'IMC_30;34.9')
++tiene_sintoma('obesidad_tipo_II', 'IMC_35;39.9')
++tiene_sintoma('obesidad_tipo_III', 'IMC_40;49.9')
++tiene_sintoma('obesidad_tipo_III', 'obesidad_morbida')
+
+# ----------------------------------------------------------------------------------------------
