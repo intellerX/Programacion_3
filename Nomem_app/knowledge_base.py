@@ -320,4 +320,23 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +tiene_sintoma('obesidad_tipo_III', 'IMC_40;49.9')
 +tiene_sintoma('obesidad_tipo_III', 'obesidad_morbida')
 
+# Solucion (pendiente terminar)
+
+#se tienen que encontrar las soluciones a los sintomas escritos previamente
+
 # ----------------------------------------------------------------------------------------------
+
+#Reglas (pendiente terminar)
+
+# 1ra regla: Desayuno, se compone de cereales, lacteos, embutidos(carne), frutas y grasas complementarias
+
+# 2da regla: Almuerzo, se compone de primer plato, segundo plato, postre y pan
+
+# 3ra regla: Cena, se compone de primer plato, segundo plato, postre y pan
+
+# 4ta regla: primer plato, puede ser verduras o cereales o raices
+
+# 5ta regla: segundo plato, puede ser un tipo de carne, o arroz, o pasta
+
+# 6ta regla: postre, puede ser fruta o jugo o lacteos
+
