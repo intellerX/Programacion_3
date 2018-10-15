@@ -276,7 +276,7 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +sedentarismo('5','Deporte varias veces al dia')
 
 # ----------------------------------------------------------------------------------------------
-
+"""
 # Enfermedades
 
 # Gastrointestinales
@@ -323,7 +323,7 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 # Solucion (pendiente terminar)
 
 #se tienen que encontrar las soluciones a los sintomas escritos previamente
-
+"""
 # ----------------------------------------------------------------------------------------------
 
 #Reglas (pendiente terminar)
