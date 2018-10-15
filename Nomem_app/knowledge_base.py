@@ -227,37 +227,77 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 
 # Raices
 
++cantidad_calorias('valeriana','0;100')
++cantidad_calorias('rabano','0;100')
++cantidad_calorias('regaliz','300;400')
++cantidad_calorias('remolacha','0;100')
++cantidad_calorias('jengibre','0;100')
++cantidad_calorias('zanahoria','0;100')
++cantidad_calorias('curcuma','200;300')
++cantidad_calorias('yuca','100;200')
+
+
 # Verduras
+
++cantidad_calorias('cilantro','0;100')
++cantidad_calorias('lechuga','0;100')
++cantidad_calorias('coliflor','0;100')
++cantidad_calorias('cebolla','0;100')
++cantidad_calorias('calabacin','0;100')
++cantidad_calorias('apio','0;100')
++cantidad_calorias('alcachofa','0;100')
++cantidad_calorias('ajo','100;200')
++cantidad_calorias('acelga','0;100')
 
 # Frutas
 
++cantidad_calorias('manzana','0;100')
++cantidad_calorias('pera','0;100')
++cantidad_calorias('uva','0;100')
++cantidad_calorias('ciruela','0;100')
++cantidad_calorias('kiwi','0;100')
++cantidad_calorias('mango','0;100')
++cantidad_calorias('papaya','0;100')
++cantidad_calorias('piña','0;100')
++cantidad_calorias('platano','0;100')
++cantidad_calorias('aguacate','100;200')
++cantidad_calorias('melon','0;100')
++cantidad_calorias('limon','0;100')
++cantidad_calorias('mandarina','0;100')
++cantidad_calorias('naranja','0;100')
++cantidad_calorias('mora','0;100')
++cantidad_calorias('fresa','0;100')
++cantidad_calorias('guayaba','100;200')
++cantidad_calorias('guanabana','0;100')
++cantidad_calorias('lulo','0;100')
+
 # Carnes
 
-cantidad_calorias('pollo','100;200')
-cantidad_calorias('pescado','100;200')
-cantidad_calorias('res','100;200')
-cantidad_calorias('cerdo','200;300')
++cantidad_calorias('pollo','100;200')
++cantidad_calorias('pescado','100;200')
++cantidad_calorias('res','100;200')
++cantidad_calorias('cerdo','200;300')
 
 # Lacteos
 
-cantidad_calorias('queso', '400;500')
-cantidad_calorias('yogurt', '0;100')
-cantidad_calorias('postres', '0;100')
-cantidad_calorias('mantequilla', '700;800')
-cantidad_calorias('leche', '0;100')
++cantidad_calorias('queso', '400;500')
++cantidad_calorias('yogurt', '0;100')
++cantidad_calorias('postres', '0;100')
++cantidad_calorias('mantequilla', '700;800')
++cantidad_calorias('leche', '0;100')
 
 # Granos
 
-cantidad_calorias('garbanzos', '300;400')
-cantidad_calorias('blanquillos', '0;100')
-cantidad_calorias('frijoles', '0;100')
-cantidad_calorias('arvejas', '100;200')
-cantidad_calorias('lentejas', '300;400')
-cantidad_calorias('avena', '100;200')
-cantidad_calorias('maiz', '300;400')
-cantidad_calorias('fideos', '300;400')
-cantidad_calorias('pan', '200;300')
-cantidad_calorias('arroz_integral', '300;400')
++cantidad_calorias('garbanzos', '300;400')
++cantidad_calorias('blanquillos', '0;100')
++cantidad_calorias('frijoles', '0;100')
++cantidad_calorias('arvejas', '100;200')
++cantidad_calorias('lentejas', '300;400')
++cantidad_calorias('avena', '100;200')
++cantidad_calorias('maiz', '300;400')
++cantidad_calorias('fideos', '300;400')
++cantidad_calorias('pan', '200;300')
++cantidad_calorias('arroz_integral', '300;400')
 
 # ----------------------------------------------------------------------------------------------
 
@@ -370,13 +410,24 @@ cantidad_calorias('arroz_integral', '300;400')
 
 # 1ra regla: Desayuno, se compone de cereales, lacteos, embutidos(carne), frutas y grasas complementarias
 
+Es_Desayuno(C,L,E,F) <= cereal(C)& lacteos(L)& embutidos(E)& frutas(F)
+
 # 2da regla: Almuerzo, se compone de primer plato, segundo plato, postre y pan
+
+Es_Amuerzo(P1,P2,P3) <= primerPlato(P1)& segundoPlato(p2)& postre(P3)& (P1!=p2) & (P2!=P3)
 
 # 3ra regla: Cena, se compone de primer plato, segundo plato, postre y pan
 
+Es_Cena(P1,P2,P3) <= primerPlato(P1)& segundoPlato(P2) & postre(p3)& (P1!=p2) & (P2!=P3)
+
 # 4ta regla: primer plato, puede ser verduras o cereales o raices
+
+primerPlato(V) <= verduras(V) or cereales(V) or raices(V)
 
 # 5ta regla: segundo plato, puede ser un tipo de carne, o arroz, o pasta
 
+segundoPlato(C) <= carne(C) or granos(C)
+
 # 6ta regla: postre, puede ser fruta o jugo o lacteos
 
+postre(P) <= futas(C) or lacteos(C)
