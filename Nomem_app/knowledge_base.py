@@ -106,7 +106,7 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +granos('garbanzos')
 +granos('blanquillos')
 +granos('frilojes')
-+granos('arbejas')
++granos('arvejas')
 +granos('lentejas')
 +granos('avena')
 +granos('maiz')
@@ -240,7 +240,24 @@ cantidad_calorias('cerdo','200;300')
 
 # Lacteos
 
+cantidad_calorias('queso', '400;500')
+cantidad_calorias('yogurt', '0;100')
+cantidad_calorias('postres', '0;100')
+cantidad_calorias('mantequilla', '700;800')
+cantidad_calorias('leche', '0;100')
+
 # Granos
+
+cantidad_calorias('garbanzos', '300;400')
+cantidad_calorias('blanquillos', '0;100')
+cantidad_calorias('frijoles', '0;100')
+cantidad_calorias('arvejas', '100;200')
+cantidad_calorias('lentejas', '300;400')
+cantidad_calorias('avena', '100;200')
+cantidad_calorias('maiz', '300;400')
+cantidad_calorias('fideos', '300;400')
+cantidad_calorias('pan', '200;300')
+cantidad_calorias('arroz_integral', '300;400')
 
 # ----------------------------------------------------------------------------------------------
 
