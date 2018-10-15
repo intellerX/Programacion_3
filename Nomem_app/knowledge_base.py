@@ -5,12 +5,20 @@ from pyDatalog.pyDatalog import assert_fact, load, ask
 # COMIDA
 
 # Tipos de comida
-pyDatalog.create_terms('raices, verduras, frutas, carnes, lacteos, granos')
+pyDatalog.create_terms('raices, verduras, frutas, carnes, lacteos, granos, cereales')
 
 # Tabla nutricional
 pyDatalog.create_terms('vitamina_a, vitamina_b, vitamina_c, calorias, carbohidratos, proteinas')
 
 pyDatalog.create_terms('cantidad_calorias')
+
+pyDatalog.create_terms('C,V,L,E,F,P1,P2,P3,P')
+
+# Tipos de comidapy
+pyDatalog.create_terms('Es_Desayuno, Es_Amuerzo, Es_Cena')
+
+# Estructura comida
+pyDatalog.create_terms('PrimerPlato, SegundoPlato, Postre')
 
 
 # -----------------------------------------------------------------------------------------------
@@ -119,7 +127,6 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 # Tabla nutricional
 """
 #vitamina a
-
 +vitamina_a('0;650')
 +vitamina_a('650;1350')
 +vitamina_a('1350;2600')
@@ -134,9 +141,7 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +vitamina_a('7800;8450')
 +vitamina_a('8450;9100')
 +vitamina_a('9100;9750')
-
 #vitamina b
-
 +vitamina_b('0;650')
 +vitamina_b('650;1350')
 +vitamina_b('1350;2600')
@@ -151,9 +156,7 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +vitamina_b('7800;8450')
 +vitamina_b('8450;9100')
 +vitamina_b('9100;9750')
-
 #vitamina c
-
 +vitamina_c('0;650')
 +vitamina_c('650;1350')
 +vitamina_c('1350;2600')
@@ -188,7 +191,6 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +calorias('1300;1400')
 """
 # Carbohidratos
-
 +carbohidratos('0;35')
 +carbohidratos('35;70')
 +carbohidratos('70;105')
@@ -203,9 +205,7 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +carbohidratos('385;420')
 +carbohidratos('420;455')
 +carbohidratos('455;490')
-
 # Proteínas
-
 +proteinas('0;35')
 +proteinas('35;70')
 +proteinas('70;105')
@@ -358,35 +358,24 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 # ----------------------------------------------------------------------------------------------
 """
 # Enfermedades
-
 # Gastrointestinales
-
 +gastrointestinales('reflujo_gastroesofagico')
 +gastrointestinales('celiaquia')
 +gastrointestinales('sindrome_intestino_irritable')
 +gastrointestinales('hemorroides')
-
 # Diabetes
-
 +diabetes('diabetes_tipo_I')
 +diabetes('diabetes_tipo_II')
-
 # Desnutrición
-
 +desnutricion('peso_insuficiente')
-
 # Obesidad
-
 +obesidad('sobrepeso_tipo_I')
 +obesidad('sobrepeso_tipo_II')
 +obesidad('obesidad_tipo_I')
 +obesidad('obesidad_tipo_II')
 +obesidad('obesidad_tipo_III')
-
 # ----------------------------------------------------------------------------------------------
-
 # Sintomas
-
 +tiene_sintoma('reflujo_gastroesofagico', 'Estomago_lleno')
 +tiene_sintoma('celiaquia', 'mala_respuesta_al_gluten')
 +tiene_sintoma('sindrome_intestino_irritable', 'falta_de_fibra')
@@ -399,33 +388,31 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +tiene_sintoma('obesidad_tipo_II', 'IMC_35;39.9')
 +tiene_sintoma('obesidad_tipo_III', 'IMC_40;49.9')
 +tiene_sintoma('obesidad_tipo_III', 'obesidad_morbida')
-
 # Solucion (pendiente terminar)
-
 #se tienen que encontrar las soluciones a los sintomas escritos previamente
 """
 # ----------------------------------------------------------------------------------------------
 
 # 1ra regla: Desayuno, se compone de cereales, lacteos, embutidos(carne), frutas y grasas complementarias
 
-Es_Desayuno(C,L,E,F) <= cereal(C)& lacteos(L)& embutidos(E)& frutas(F)
+Es_Desayuno(C,L,E,F) <= cereales(C) & lacteos(L) & carnes(E) & frutas(F)
 
 # 2da regla: Almuerzo, se compone de primer plato, segundo plato, postre y pan
 
-Es_Amuerzo(P1,P2,P3) <= primerPlato(P1)& segundoPlato(p2)& postre(P3)& (P1!=p2) & (P2!=P3)
+Es_Amuerzo(P1,P2,P3) <= PrimerPlato(P1) & SegundoPlato(P2) & Postre(P3) & (P1!=P2) & (P2!=P3)
 
 # 3ra regla: Cena, se compone de primer plato, segundo plato, postre y pan
 
-Es_Cena(P1,P2,P3) <= primerPlato(P1)& segundoPlato(P2) & postre(p3)& (P1!=p2) & (P2!=P3)
+Es_Cena(P1,P2,P3) <= PrimerPlato(P1) & SegundoPlato(P2) & Postre(P3) & (P1!=P2) & (P2!=P3)
 
 # 4ta regla: primer plato, puede ser verduras o cereales o raices
 
-primerPlato(V) <= verduras(V) or cereales(V) or raices(V)
+PrimerPlato(V) <= verduras(V) or cereales(V) or raices(V)
 
 # 5ta regla: segundo plato, puede ser un tipo de carne, o arroz, o pasta
 
-segundoPlato(C) <= carne(C) or granos(C)
+SegundoPlato(C) <= carnes(C) or granos(C)
 
 # 6ta regla: postre, puede ser fruta o jugo o lacteos
 
-postre(P) <= futas(C) or lacteos(C)
+postre(P) <= frutas(C) or lacteos(C)
