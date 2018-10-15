@@ -221,6 +221,22 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 
 # ----------------------------------------------------------------------------------------------
 
+# Tabla nutricional
+
+# Raices
+
+# Verduras
+
+# Frutas
+
+# Carnes
+
+# Lacteos
+
+# Granos
+
+# ----------------------------------------------------------------------------------------------
+
 # Datos
 
 # Género
