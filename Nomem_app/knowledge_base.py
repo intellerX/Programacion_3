@@ -366,17 +366,26 @@ cantidad_calorias('arroz_integral', '300;400')
 """
 # ----------------------------------------------------------------------------------------------
 
-#Reglas (pendiente terminar)
-
 # 1ra regla: Desayuno, se compone de cereales, lacteos, embutidos(carne), frutas y grasas complementarias
+
+Es_Desayuno(C,L,E,F) <= cereal(C)& lacteos(L)& embutidos(E)& frutas(F)
 
 # 2da regla: Almuerzo, se compone de primer plato, segundo plato, postre y pan
 
+Es_Amuerzo(P1,P2,P3) <= primerPlato(P1)& segundoPlato(p2)& postre(P3)& (P1!=p2) & (P2!=P3)
+
 # 3ra regla: Cena, se compone de primer plato, segundo plato, postre y pan
+
+Es_Cena(P1,P2,P3) <= primerPlato(P1)& segundoPlato(P2) & postre(p3)& (P1!=p2) & (P2!=P3)
 
 # 4ta regla: primer plato, puede ser verduras o cereales o raices
 
+primerPlato(V) <= verduras(V) or cereales(V) or raices(V)
+
 # 5ta regla: segundo plato, puede ser un tipo de carne, o arroz, o pasta
+
+segundoPlato(C) <= carne(C) or granos(C)
 
 # 6ta regla: postre, puede ser fruta o jugo o lacteos
 
+postre(P) <= futas(C) or lacteos(C)
