@@ -406,8 +406,6 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 """
 # ----------------------------------------------------------------------------------------------
 
-#Reglas (pendiente terminar)
-
 # 1ra regla: Desayuno, se compone de cereales, lacteos, embutidos(carne), frutas y grasas complementarias
 
 Es_Desayuno(C,L,E,F) <= cereal(C)& lacteos(L)& embutidos(E)& frutas(F)
