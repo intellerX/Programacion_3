@@ -233,10 +233,10 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 
 # Carnes
 
-tiene_calorias('pollo','100;200')
-tiene_calorias('pescado','100;200')
-tiene_calorias('res','100;200')
-tiene_calorias('cerdo','200;300')
+cantidad_calorias('pollo','100;200')
+cantidad_calorias('pescado','100;200')
+cantidad_calorias('res','100;200')
+cantidad_calorias('cerdo','200;300')
 
 # Lacteos
 
