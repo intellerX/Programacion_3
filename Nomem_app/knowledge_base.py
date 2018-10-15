@@ -10,6 +10,8 @@ pyDatalog.create_terms('raices, verduras, frutas, carnes, lacteos, granos')
 # Tabla nutricional
 pyDatalog.create_terms('vitamina_a, vitamina_b, vitamina_c, calorias, carbohidratos, proteinas')
 
+pyDatalog.create_terms('cantidad_caloriass')
+
 
 # -----------------------------------------------------------------------------------------------
 
