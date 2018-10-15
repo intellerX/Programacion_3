@@ -117,7 +117,7 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 # ----------------------------------------------------------------------------------------------
 
 # Tabla nutricional
-
+"""
 #vitamina a
 
 +vitamina_a('0;650')
@@ -168,7 +168,7 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +vitamina_c('7800;8450')
 +vitamina_c('8450;9100')
 +vitamina_c('9100;9750')
-
+"""
 
 #Calorías
 
@@ -186,7 +186,7 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +calorias('1100;1200')
 +calorias('1200;1300')
 +calorias('1300;1400')
-
+"""
 # Carbohidratos
 
 +carbohidratos('0;35')
@@ -220,7 +220,7 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +proteinas('385;420')
 +proteinas('420;455')
 +proteinas('455;490')
-
+"""
 # ----------------------------------------------------------------------------------------------
 
 # Tabla nutricional
