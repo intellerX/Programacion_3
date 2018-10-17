@@ -1,3 +1,4 @@
+# coding=utf-8
 from pyDatalog import pyDatalog
 
 from pyDatalog.pyDatalog import assert_fact, load, ask
@@ -367,98 +368,98 @@ Es_Cena(P1,P2,P3,A1,A2,A3) <= PP(P1) & SP(P2) & P(P3) & cantidad_calorias(P1,A1)
 
 # ----------------------------------------------------------------------------------------------
 
-# avena   | leche   | pollo   | mandarina
+# avena   - leche   - pollo   - mandarina
 +DES('avena','leche','pollo','mandarina')
-# avena   | leche   | pollo   | lulo
+# avena   - leche   - pollo   - lulo
 +DES('avena','leche','pollo','lulo')
-# avena   | postres | pescado | pina
+# avena   - postres - pescado - pina
 +DES('avena','postres','pescado','pina')
-# avena   | postres | pescado | lulo
+# avena   - postres - pescado - lulo
 +DES('avena','postres','pescado','lulo')
-# avena   | leche   | pollo   | mora
+# avena   - leche   - pollo   - mora
 +DES('avena','leche','pollo','mora')
 
-# pan | yogurt  | pollo   | ciruela
+# pan - yogurt  - pollo   - ciruela
 +DES('pan','yogurt','pollo','ciruela')
-# pan | leche   | pescado | mango
+# pan - leche   - pescado - mango
 +DES('pan','leche','pescado','mango')
-# pan | leche   | pollo   | guanabana
+# pan - leche   - pollo   - guanabana
 +DES('pan','leche','pollo','guanabana')
-# pan | postres | pollo   | naranja
+# pan - postres - pollo   - naranja
 +DES('pan','postres','pollo','naranja')
-# pan | yogurt  | pescado | naranja
+# pan - yogurt  - pescado - naranja
 +DES('pan','yogurt','pescado','naranja')
 
-# fideos         | leche   | pollo   | mora
+# fideos         - leche   - pollo   - mora
 +DES('fideos','leche','pollo','mora')
-# fideos         | leche   | pescado | pera
+# fideos         - leche   - pescado - pera
 +DES('fideos','leche','pescado','pera')
-# fideos         | leche   | pollo   | guanabana
+# fideos         - leche   - pollo   - guanabana
 +DES('fideos','leche','pollo','guanabana')
 
-# arroz_integral | yogurt  | pescado | kiwi
+# arroz_integral - yogurt  - pescado - kiwi
 +DES('arroz_integral','yogurt','pescado','kiwi')
-# arroz_integral | postres | res     | guanabana
+# arroz_integral - postres - res     - guanabana
 +DES('arroz_integral','postres','res','guanabana')
-# arroz_integral | leche   | pollo   | pina
-+DES('arroz_integral','leche','pollo','piña')
+# arroz_integral - leche   - pollo   - pina
++DES('arroz_integral','leche','pollo','pina')
 
 # ----------------------------------------------------------------------------------------------
 
-# fideos         | blanquillos | aguacate
+# fideos         - blanquillos - aguacate
 +ALM('fideos','blanquillos','aguacate')
-# arroz_integral | blanquillos | guayaba
+# arroz_integral - blanquillos - guayaba
 +ALM('arroz_integral','blanquillos','guayaba')
-# maiz           | blanquillos | aguacate
+# maiz           - blanquillos - aguacate
 +ALM('maiz','blanquillos','aguacate')
-# maiz           | blanquillos | guayaba
+# maiz           - blanquillos - guayaba
 +ALM('maiz','blanquillos','guayaba')
-# lentejas       | blanquillos | aguacate
+# lentejas       - blanquillos - aguacate
 +ALM('lentejas','blanquillos','aguacate')
 
-# lentejas       | res     | guayaba
+# lentejas       - res     - guayaba
 +ALM('lentejas','res','guayaba')
-# maiz           | pollo   | guayaba
+# maiz           - pollo   - guayaba
 +ALM('maiz','pollo','guayaba')
-# garbanzos      | pescado | aguacate
+# garbanzos      - pescado - aguacate
 +ALM('garbanzos','pescado','aguacate')
-# fideos         | pollo   | guayaba
+# fideos         - pollo   - guayaba
 +ALM('fideos','pollo','guayaba')
-# maiz           | pollo   | aguacate
+# maiz           - pollo   - aguacate
 +ALM('maiz','pollo','aguacate')
 
-# pan     | pollo   | guayaba
+# pan     - pollo   - guayaba
 +ALM('pan','pollo','guayaba')
-# pan     | pollo   | aguacate
+# pan     - pollo   - aguacate
 +ALM('pan','pollo','aguacate')
-# pan     | res     | aguacate
+# pan     - res     - aguacate
 +ALM('pan','res','aguacate')
-# pan     | pescado | guayaba
+# pan     - pescado - guayaba
 +ALM('pan','pescado','guayaba')
-# pan     | pescado | aguacate
+# pan     - pescado - aguacate
 +ALM('pan','pescado','aguacate')
-# avena   | pescado | postres
+# avena   - pescado - postres
 +ALM('avena','pescado','postres')
-# arvejas | res     | pera
+# arvejas - res     - pera
 +ALM('arvejas','res','pera')
-# arvejas | pollo   | platano
+# arvejas - pollo   - platano
 +ALM('arvejas','pollo','platano')
-# yuca    | pescado | mango
+# yuca    - pescado - mango
 +ALM('yuca','pescado','mango')
-# arvejas | pescado | pina
+# arvejas - pescado - pina
 +ALM('arvejas','pescado','pina')
 
 # ----------------------------------------------------------------------------------------------
 
-# alcachofa | blanquillos | guanabana
+# alcachofa - blanquillos - guanabana
 +CEN('alcachofa','blanquillos','guanabana')
-# calabacin | blanquillos | uva
+# calabacin - blanquillos - uva
 +CEN('calabacin','blanquillos','uva')
-# zanahoria | blanquillos | ciruela
+# zanahoria - blanquillos - ciruela
 +CEN('zanahoria','blanquillos','ciruela')
-# calabacin | blanquillos | limon
+# calabacin - blanquillos - limon
 +CEN('calabacin','blanquillos','limon')
-# lechuga   | blanquillos | mango
+# lechuga   - blanquillos - mango
 +CEN('lechuga','blanquillos','mango')
 
 # ----------------------------------------------------------------------------------------------
@@ -475,3 +476,4 @@ def combinacion_cenas():
     print(Es_Cena(P1, P2, P3, '0;100', '0;100', '0;100'))
     return 0
 
+combinacion_desayunos()
