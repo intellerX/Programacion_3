@@ -2,16 +2,30 @@ from pyDatalog import pyDatalog
 
 from pyDatalog.pyDatalog import assert_fact, load, ask
 
+# Variables
+pyDatalog.create_terms('C,V,L,E,F,P1,P2,P3,P,X,Y,Z,W,A1,A2,A3,A4')
+
+# -----------------------------------------------------------------------------------------------
+
 # COMIDA
 
 # Tipos de comida
-pyDatalog.create_terms('raices, verduras, frutas, carnes, lacteos, granos')
+pyDatalog.create_terms('raices, verduras, frutas, carnes, lacteos, granos, granos')
 
 # Tabla nutricional
-pyDatalog.create_terms('vitamina_a, vitamina_b, vitamina_c, calorias, carbohidratos, proteinas')
+pyDatalog.create_terms('calorias')
 
+# Cantidad de calorias por alimento
 pyDatalog.create_terms('cantidad_calorias')
 
+# Tipos de comida
+pyDatalog.create_terms('Es_Desayuno, Es_Almuerzo, Es_Cena,DES,ALM,CEN')
+
+# primer plato comidas, puede ser verduras o granos o raices
+# segundo plato, puede ser un tipo de carne, o arroz, o pasta
+# postre, puede ser fruta o jugo o lacteos
+
+pyDatalog.create_terms('PP,SP,P')
 
 # -----------------------------------------------------------------------------------------------
 
@@ -32,9 +46,6 @@ pyDatalog.create_terms('tiene_sintoma, solucion')
 
 # Tipos de comida
 pyDatalog.create_terms('desayuno, almuerzo, cena')
-
-# Estructura comida
-pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 
 # ----------------------------------------------------------------------------------------------
 
@@ -73,7 +84,7 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +frutas('kiwi')
 +frutas('mango')
 +frutas('papaya')
-+frutas('piña')
++frutas('pina')
 +frutas('platano')
 +frutas('aguacate')
 +frutas('melon')
@@ -117,60 +128,8 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 # ----------------------------------------------------------------------------------------------
 
 # Tabla nutricional
-"""
-#vitamina a
 
-+vitamina_a('0;650')
-+vitamina_a('650;1350')
-+vitamina_a('1350;2600')
-+vitamina_a('2600;3250')
-+vitamina_a('3250;3900')
-+vitamina_a('3900;4550')
-+vitamina_a('4550;5200')
-+vitamina_a('5200;5850')
-+vitamina_a('5850;6500')
-+vitamina_a('6500;7150')
-+vitamina_a('7150;7800')
-+vitamina_a('7800;8450')
-+vitamina_a('8450;9100')
-+vitamina_a('9100;9750')
-
-#vitamina b
-
-+vitamina_b('0;650')
-+vitamina_b('650;1350')
-+vitamina_b('1350;2600')
-+vitamina_b('2600;3250')
-+vitamina_b('3250;3900')
-+vitamina_b('3900;4550')
-+vitamina_b('4550;5200')
-+vitamina_b('5200;5850')
-+vitamina_b('5850;6500')
-+vitamina_b('6500;7150')
-+vitamina_b('7150;7800')
-+vitamina_b('7800;8450')
-+vitamina_b('8450;9100')
-+vitamina_b('9100;9750')
-
-#vitamina c
-
-+vitamina_c('0;650')
-+vitamina_c('650;1350')
-+vitamina_c('1350;2600')
-+vitamina_c('2600;3250')
-+vitamina_c('3250;3900')
-+vitamina_c('3900;4550')
-+vitamina_c('4550;5200')
-+vitamina_c('5200;5850')
-+vitamina_c('5850;6500')
-+vitamina_c('6500;7150')
-+vitamina_c('7150;7800')
-+vitamina_c('7800;8450')
-+vitamina_c('8450;9100')
-+vitamina_c('9100;9750')
-"""
-
-#Calorías
+#Calorias
 
 +calorias('0;100')
 +calorias('100;200')
@@ -186,44 +145,8 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +calorias('1100;1200')
 +calorias('1200;1300')
 +calorias('1300;1400')
-"""
-# Carbohidratos
 
-+carbohidratos('0;35')
-+carbohidratos('35;70')
-+carbohidratos('70;105')
-+carbohidratos('105;140')
-+carbohidratos('140;175')
-+carbohidratos('175;210')
-+carbohidratos('210;245')
-+carbohidratos('245;280')
-+carbohidratos('280;315')
-+carbohidratos('315;350')
-+carbohidratos('350;385')
-+carbohidratos('385;420')
-+carbohidratos('420;455')
-+carbohidratos('455;490')
-
-# Proteínas
-
-+proteinas('0;35')
-+proteinas('35;70')
-+proteinas('70;105')
-+proteinas('105;140')
-+proteinas('140;175')
-+proteinas('175;210')
-+proteinas('210;245')
-+proteinas('245;280')
-+proteinas('280;315')
-+proteinas('315;350')
-+proteinas('350;385')
-+proteinas('385;420')
-+proteinas('420;455')
-+proteinas('455;490')
-"""
-# ----------------------------------------------------------------------------------------------
-
-# Tabla nutricional
+# Cantidad calorias por alimento
 
 # Raices
 
@@ -258,7 +181,7 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +cantidad_calorias('kiwi','0;100')
 +cantidad_calorias('mango','0;100')
 +cantidad_calorias('papaya','0;100')
-+cantidad_calorias('piña','0;100')
++cantidad_calorias('pina','0;100')
 +cantidad_calorias('platano','0;100')
 +cantidad_calorias('aguacate','100;200')
 +cantidad_calorias('melon','0;100')
@@ -298,12 +221,82 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +cantidad_calorias('fideos', '300;400')
 +cantidad_calorias('pan', '200;300')
 +cantidad_calorias('arroz_integral', '300;400')
+# ----------------------------------------------------------------------------------------------
+
++PP('cilantro')
++PP('lechuga')
++PP('colifror')
++PP('cebolla')
++PP('calabacin')
++PP('apio')
++PP('alcachofa')
++PP('ajo')
++PP('acelga')
++PP('garbanzos')
++PP('blanquillos')
++PP('frilojes')
++PP('arvejas')
++PP('lentejas')
++PP('avena')
++PP('maiz')
++PP('fideos')
++PP('pan')
++PP('arroz_integral')
++PP('valeriana')
++PP('rabano')
++PP('regaliz')
++PP('remolacha')
++PP('jengibre')
++PP('curcuma')
++PP('zanahoria')
++PP('papa')
++PP('yuca')
+
++SP('garbanzos')
++SP('blanquillos')
++SP('frilojes')
++SP('arvejas')
++SP('lentejas')
++SP('avena')
++SP('maiz')
++SP('fideos')
++SP('pan')
++SP('arroz_integral')
++SP('pescado')
++SP('pollo')
++SP('cerdo')
++SP('res')
+
++P('manzana')
++P('pera')
++P('uva')
++P('ciruela')
++P('kiwi')
++P('mango')
++P('papaya')
++P('pina')
++P('platano')
++P('aguacate')
++P('melon')
++P('limon')
++P('mandarina')
++P('naranja')
++P('mora')
++P('fresa')
++P('guayaba')
++P('guanabana')
++P('lulo')
++P('queso')
++P('yogurt')
++P('postres')
++P('mantequilla')
++P('leche')
 
 # ----------------------------------------------------------------------------------------------
 
 # Datos
 
-# Género
+# Genero
 
 +genero('masculino')
 +genero('femenino')
@@ -356,76 +349,129 @@ pyDatalog.create_terms('primer_plato, segundo_plato, postre')
 +sedentarismo('5','Deporte varias veces al dia')
 
 # ----------------------------------------------------------------------------------------------
-"""
-# Enfermedades
 
-# Gastrointestinales
+# 1ra regla: Desayuno, se compone de granos, lacteos, embutidos(carne), frutas y grasas complementarias
 
-+gastrointestinales('reflujo_gastroesofagico')
-+gastrointestinales('celiaquia')
-+gastrointestinales('sindrome_intestino_irritable')
-+gastrointestinales('hemorroides')
-
-# Diabetes
-
-+diabetes('diabetes_tipo_I')
-+diabetes('diabetes_tipo_II')
-
-# Desnutrición
-
-+desnutricion('peso_insuficiente')
-
-# Obesidad
-
-+obesidad('sobrepeso_tipo_I')
-+obesidad('sobrepeso_tipo_II')
-+obesidad('obesidad_tipo_I')
-+obesidad('obesidad_tipo_II')
-+obesidad('obesidad_tipo_III')
-
-# ----------------------------------------------------------------------------------------------
-
-# Sintomas
-
-+tiene_sintoma('reflujo_gastroesofagico', 'Estomago_lleno')
-+tiene_sintoma('celiaquia', 'mala_respuesta_al_gluten')
-+tiene_sintoma('sindrome_intestino_irritable', 'falta_de_fibra')
-+tiene_sintoma('hemorroides', 'mucha_sal_o_azucar')
-+tiene_sintoma('peso_insuficiente', 'IMC_<18.5')
-+tiene_sintoma('sobrepeso_tipo_I', 'IMC_25;26.9')
-+tiene_sintoma('sobrepeso_tipo_II', 'IMC_27;29.9')
-+tiene_sintoma('sobrepeso_tipo_II', 'preobesidad')
-+tiene_sintoma('obesidad_tipo_I', 'IMC_30;34.9')
-+tiene_sintoma('obesidad_tipo_II', 'IMC_35;39.9')
-+tiene_sintoma('obesidad_tipo_III', 'IMC_40;49.9')
-+tiene_sintoma('obesidad_tipo_III', 'obesidad_morbida')
-
-# Solucion (pendiente terminar)
-
-#se tienen que encontrar las soluciones a los sintomas escritos previamente
-"""
-# ----------------------------------------------------------------------------------------------
-
-# 1ra regla: Desayuno, se compone de cereales, lacteos, embutidos(carne), frutas y grasas complementarias
-
-Es_Desayuno(C,L,E,F) <= cereal(C)& lacteos(L)& embutidos(E)& frutas(F)
+Es_Desayuno(C,L,E,F,A1,A2,A3,A4) <= granos(C) & lacteos(L) & carnes(E) & frutas(F) & cantidad_calorias(C,A1) & \
+                                    cantidad_calorias(L,A2) & cantidad_calorias(E,A3) & cantidad_calorias(F,A4)
 
 # 2da regla: Almuerzo, se compone de primer plato, segundo plato, postre y pan
 
-Es_Amuerzo(P1,P2,P3) <= primerPlato(P1)& segundoPlato(p2)& postre(P3)& (P1!=p2) & (P2!=P3)
+Es_Almuerzo(P1,P2,P3,A1,A2,A3) <= PP(P1) & SP(P2) & P(P3) & cantidad_calorias(P1,A1) & cantidad_calorias(P2,A2) & \
+                                  cantidad_calorias(P3,A3) & (P1!=P2)
 
 # 3ra regla: Cena, se compone de primer plato, segundo plato, postre y pan
 
-Es_Cena(P1,P2,P3) <= primerPlato(P1)& segundoPlato(P2) & postre(p3)& (P1!=p2) & (P2!=P3)
+Es_Cena(P1,P2,P3,A1,A2,A3) <= PP(P1) & SP(P2) & P(P3) & cantidad_calorias(P1,A1) & cantidad_calorias(P2,A2) & \
+                              cantidad_calorias(P3,A3) & (P1!=P2)
 
-# 4ta regla: primer plato, puede ser verduras o cereales o raices
+# ----------------------------------------------------------------------------------------------
 
-primerPlato(V) <= verduras(V) or cereales(V) or raices(V)
+# avena   | leche   | pollo   | mandarina
++DES('avena','leche','pollo','mandarina')
+# avena   | leche   | pollo   | lulo
++DES('avena','leche','pollo','lulo')
+# avena   | postres | pescado | pina
++DES('avena','postres','pescado','pina')
+# avena   | postres | pescado | lulo
++DES('avena','postres','pescado','lulo')
+# avena   | leche   | pollo   | mora
++DES('avena','leche','pollo','mora')
 
-# 5ta regla: segundo plato, puede ser un tipo de carne, o arroz, o pasta
+# pan | yogurt  | pollo   | ciruela
++DES('pan','yogurt','pollo','ciruela')
+# pan | leche   | pescado | mango
++DES('pan','leche','pescado','mango')
+# pan | leche   | pollo   | guanabana
++DES('pan','leche','pollo','guanabana')
+# pan | postres | pollo   | naranja
++DES('pan','postres','pollo','naranja')
+# pan | yogurt  | pescado | naranja
++DES('pan','yogurt','pescado','naranja')
 
-segundoPlato(C) <= carne(C) or granos(C)
+# fideos         | leche   | pollo   | mora
++DES('fideos','leche','pollo','mora')
+# fideos         | leche   | pescado | pera
++DES('fideos','leche','pescado','pera')
+# fideos         | leche   | pollo   | guanabana
++DES('fideos','leche','pollo','guanabana')
 
-# 6ta regla: postre, puede ser fruta o jugo o lacteos
+# arroz_integral | yogurt  | pescado | kiwi
++DES('arroz_integral','yogurt','pescado','kiwi')
+# arroz_integral | postres | res     | guanabana
++DES('arroz_integral','postres','res','guanabana')
+# arroz_integral | leche   | pollo   | pina
++DES('arroz_integral','leche','pollo','piña')
 
-postre(P) <= futas(C) or lacteos(C)
+# ----------------------------------------------------------------------------------------------
+
+# fideos         | blanquillos | aguacate
++ALM('fideos','blanquillos','aguacate')
+# arroz_integral | blanquillos | guayaba
++ALM('arroz_integral','blanquillos','guayaba')
+# maiz           | blanquillos | aguacate
++ALM('maiz','blanquillos','aguacate')
+# maiz           | blanquillos | guayaba
++ALM('maiz','blanquillos','guayaba')
+# lentejas       | blanquillos | aguacate
++ALM('lentejas','blanquillos','aguacate')
+
+# lentejas       | res     | guayaba
++ALM('lentejas','res','guayaba')
+# maiz           | pollo   | guayaba
++ALM('maiz','pollo','guayaba')
+# garbanzos      | pescado | aguacate
++ALM('garbanzos','pescado','aguacate')
+# fideos         | pollo   | guayaba
++ALM('fideos','pollo','guayaba')
+# maiz           | pollo   | aguacate
++ALM('maiz','pollo','aguacate')
+
+# pan     | pollo   | guayaba
++ALM('pan','pollo','guayaba')
+# pan     | pollo   | aguacate
++ALM('pan','pollo','aguacate')
+# pan     | res     | aguacate
++ALM('pan','res','aguacate')
+# pan     | pescado | guayaba
++ALM('pan','pescado','guayaba')
+# pan     | pescado | aguacate
++ALM('pan','pescado','aguacate')
+# avena   | pescado | postres
++ALM('avena','pescado','postres')
+# arvejas | res     | pera
++ALM('arvejas','res','pera')
+# arvejas | pollo   | platano
++ALM('arvejas','pollo','platano')
+# yuca    | pescado | mango
++ALM('yuca','pescado','mango')
+# arvejas | pescado | pina
++ALM('arvejas','pescado','pina')
+
+# ----------------------------------------------------------------------------------------------
+
+# alcachofa | blanquillos | guanabana
++CEN('alcachofa','blanquillos','guanabana')
+# calabacin | blanquillos | uva
++CEN('calabacin','blanquillos','uva')
+# zanahoria | blanquillos | ciruela
++CEN('zanahoria','blanquillos','ciruela')
+# calabacin | blanquillos | limon
++CEN('calabacin','blanquillos','limon')
+# lechuga   | blanquillos | mango
++CEN('lechuga','blanquillos','mango')
+
+# ----------------------------------------------------------------------------------------------
+
+def combinacion_desayunos():
+    print(Es_Desayuno(X, Y, Z, W, '300;400', '0;100', '100;200', '0;100'))
+    return 0
+
+def combinacion_almuerzos():
+    print(Es_Almuerzo(P1, P2, P3, '100;200', '100;200', '0;100'))
+    return 0
+
+def combinacion_cenas():
+    print(Es_Cena(P1, P2, P3, '0;100', '0;100', '0;100'))
+    return 0
+
