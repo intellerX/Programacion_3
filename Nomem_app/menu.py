@@ -1,6 +1,7 @@
 from pyDatalog import  pyDatalog, pyEngine
 import testing
 import ui
+import operaciones
 
 def main():
     estado = True
@@ -16,6 +17,11 @@ def main():
             print("")
             total = ui.calcular_IMC(genero, peso, estatura, edad, sedentarismo)
             print("")
+            t1 = total *(3/8)
+            t2 = total *(3/8)
+            t3 = total *(2/8)
+
+
         elif opcion == '2':
             ui.instrucciones()
         elif opcion == '0':
