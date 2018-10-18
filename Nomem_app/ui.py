@@ -25,9 +25,24 @@ def menu_principal():
 			2. Instrucciones de uso
 			0. Salir del programa
 	""")
-    opcion = raw_input('Digite su opcion: ')
+    opcion = raw_input("    Digite su opcion: ")
     return opcion
 
+def ingresar_genero():
+    genero = float(input("    Digite su opcion: "))
+    return genero
+
+def ingresar_edad():
+    edad = float(input("    Ingrese su edad: "))
+    return edad
+
+def ingresar_peso():
+    peso = float(input("    Ingrese su peso en kilogramos: "))
+    return peso
+
+def ingresar_estatura():
+    estatura = float(input("    Ingrese su estatura en centimetros: "))
+    return estatura
 
 def ingresar_datos_usuario():
     print("""
@@ -36,15 +51,9 @@ def ingresar_datos_usuario():
 		   2. femenino
 		   ----------------------------------------------------------------------------
 	""")
+    return 0
 
-    genero = float(input("  Digite su opcion: "))
-
-    edad = float(input("    Ingrese su edad: "))
-
-    peso = float(input("    Ingrese su peso en kilogramos: "))
-
-    estatura = float(input("    Ingrese su estatura en centimetros: "))
-
+def sedentarismo():
     print(""" 
 		   Ingrese su nivel de sedentarismo:
 		   1. una persona que no hace ejercicio.
@@ -56,8 +65,9 @@ def ingresar_datos_usuario():
 	""")
 
     sedentarismo = float(input("    Digite su opcion: "))
+    return sedentarismo
 
-
+def calcular_IMC(genero, peso, estatura, edad, sedentarismo):
     if genero == 1:
         if sedentarismo == 1:
             Total = float((66.473 + (13.751 * peso) + (5.0033 * estatura) - (6.7550 * edad)) * 1.2)
@@ -82,9 +92,21 @@ def ingresar_datos_usuario():
         elif sedentarismo == 5:
             Total = float((655.1 + (9.463 * peso) + (1.8 * estatura) - (4.6756 * edad)) * 1.9)
 
-    print(" La cantidad de calorias para su consumo son: "+str(int(Total)))
+    print("""
+            La cantidad de calorias para su consumo son: """+str(int(Total)))
     pass
+    return Total
+
+def instrucciones():
+    print("""
+            Este programa te genera una dieta segun los datos que le proporciones
+            , dandote una combinacion de comidas que son relativamente accesibles en tu
+            canasta familiar.
+            
+            Para iniciar el programa debes dar a la opcion (1). Una vez selecciones la 
+            opcion, le proporcionaras los datos de genero, edad, peso y estatura tuyos,
+            ademas de seleccionar un nivel de sedentarismo que corresponde al que mejor
+            representa su vida diaria. 
+           -----------------------------------------------------------------------------
+            """)
     return 0
-
-
-ingresar_datos_usuario()

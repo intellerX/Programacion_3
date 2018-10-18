@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26e4adca-6f05-4a00-a249-63f2d22bc0cf" name="Default Changelist" comment="Avance - base de conocimiento" />
+    <list default="true" id="26e4adca-6f05-4a00-a249-63f2d22bc0cf" name="Default Changelist" comment="Avance - base de conocimiento">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nomem_app/Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nomem_app/ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nomem_app/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nomem_app/testing.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,7 +15,8 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Programacion_3$Reglas.coverage" NAME="Reglas Coverage Results" MODIFIED="1539804523441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads" />
     <SUITE FILE_PATH="coverage/Programacion_3$testing.coverage" NAME="testing Coverage Results" MODIFIED="1539809707082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Nomem_app" />
-    <SUITE FILE_PATH="coverage/Programacion_3$Menu.coverage" NAME="Menu Coverage Results" MODIFIED="1539751047509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Nomem_app" />
+    <SUITE FILE_PATH="coverage/Programacion_3$Menu.coverage" NAME="Menu Coverage Results" MODIFIED="1539814462555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Nomem_app" />
+    <SUITE FILE_PATH="coverage/Programacion_3$menu.coverage" NAME="menu Coverage Results" MODIFIED="1539815006972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Nomem_app" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -71,28 +76,31 @@
     <session id="-1868172475">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="1" />
+          <entry key="py" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="1" />
+          <entry key="Python" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="3312" />
+          <entry key="dummy" value="3" />
+          <entry key="py" value="4737" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="3312" />
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Python" value="4737" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -102,44 +110,36 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/Reglas.py">
+        <entry file="file://$PROJECT_DIR$/Nomem_app/ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="433" column="30" lean-forward="true" selection-start-line="433" selection-start-column="30" selection-end-line="433" selection-end-column="30" />
+            <state relative-caret-position="467">
+              <caret line="108" column="12" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
               <folding>
-                <marker date="1539743984946" expanded="true" signature="11841:11922" ph="..." />
-                <marker date="1539743984946" expanded="true" signature="11946:12018" ph="..." />
+                <marker date="1539815006933" expanded="true" signature="1167:1261" ph="..." />
+                <marker date="1539815006933" expanded="true" signature="3454:3459" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Nomem_app/testing.py">
+        <entry file="file://$PROJECT_DIR$/Nomem_app/menu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="100" column="1" lean-forward="true" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Nomem_app/base_conocimiento.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="342" lean-forward="true" selection-start-line="342" selection-end-line="342" />
+            <state relative-caret-position="255">
+              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
               <folding>
-                <element signature="e#15#46#0" expanded="true" />
+                <element signature="e#0#42#0" expanded="true" />
+                <marker date="1539815006885" expanded="true" signature="80:85" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Nomem_app/Menu.py">
+        <entry file="file://$PROJECT_DIR$/Nomem_app/testing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="84" column="74" selection-start-line="84" selection-start-column="74" selection-end-line="84" selection-end-column="74" />
+            <state relative-caret-position="15">
+              <caret line="79" column="24" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -180,6 +180,8 @@
         <option value="$PROJECT_DIR$/Nomem_app/reglas2.py" />
         <option value="$PROJECT_DIR$/Nomem_app/Menu.py" />
         <option value="$PROJECT_DIR$/Nomem_app/testing.py" />
+        <option value="$PROJECT_DIR$/Nomem_app/ui.py" />
+        <option value="$PROJECT_DIR$/Nomem_app/menu.py" />
       </list>
     </option>
   </component>
@@ -237,7 +239,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.testing">
+  <component name="RunManager" selected="Python.menu">
     <configuration name="Menu" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Programacion_3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -251,7 +253,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Nomem_app/Menu.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Nomem_app/ui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -274,6 +276,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/Reglas.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="menu" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Programacion_3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Nomem_app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Nomem_app/menu.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -308,12 +332,14 @@
       <item itemvalue="Python.Reglas" />
       <item itemvalue="Python.Menu" />
       <item itemvalue="Python.testing" />
+      <item itemvalue="Python.menu" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.menu" />
+        <item itemvalue="Python.Menu" />
         <item itemvalue="Python.testing" />
         <item itemvalue="Python.Reglas" />
-        <item itemvalue="Python.Menu" />
       </list>
     </recent_temporary>
   </component>
@@ -379,10 +405,13 @@
     <entry file="file://$PROJECT_DIR$/Nomem_app/Base.py" />
     <entry file="file://$PROJECT_DIR$/Nomem_app/__init__.py" />
     <entry file="file://$PROJECT_DIR$/Nomem_app/Reglas.py" />
-    <entry file="file://$PROJECT_DIR$/Nomem_app/Menu.py">
+    <entry file="file://$PROJECT_DIR$/Nomem_app/base_conocimiento.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="84" column="74" selection-start-line="84" selection-start-column="74" selection-end-line="84" selection-end-column="74" />
+        <state relative-caret-position="15">
+          <caret line="342" lean-forward="true" selection-start-line="342" selection-end-line="342" />
+          <folding>
+            <element signature="e#15#46#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -397,20 +426,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Nomem_app/base_conocimiento.py">
+    <entry file="file://$PROJECT_DIR$/Nomem_app/testing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="342" lean-forward="true" selection-start-line="342" selection-end-line="342" />
+          <caret line="79" column="24" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Nomem_app/ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="108" column="12" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
           <folding>
-            <element signature="e#15#46#0" expanded="true" />
+            <marker date="1539815006933" expanded="true" signature="1167:1261" ph="..." />
+            <marker date="1539815006933" expanded="true" signature="3454:3459" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Nomem_app/testing.py">
+    <entry file="file://$PROJECT_DIR$/Nomem_app/menu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="100" column="1" lean-forward="true" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
+        <state relative-caret-position="255">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+            <marker date="1539815006885" expanded="true" signature="80:85" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
