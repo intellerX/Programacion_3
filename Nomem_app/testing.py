@@ -24,7 +24,7 @@ pyDatalog.create_terms('desayuno,almuerzo,cena')
 +desayuno('yogurt_mora','lacteo,',102)
 +desayuno('yogurt_fresa','lacteo',102)
 +desayuno('kumis','lacteo',160)
-+desayuno('queso_dobre_crema','lacteo',45)
++desayuno('queso_doble_crema','lacteo',45)
 +desayuno('queso_cuajada','lacteo',90)
 
 +desayuno('jugo_mango','bebida',0)
@@ -44,6 +44,7 @@ pyDatalog.create_terms('desayuno,almuerzo,cena')
 +almuerzo('papas','primer_plato',290)
 +almuerzo('yuca','primer_plato',159)
 +almuerzo('verduras_salteadas','primer_plato',125)
++almuerzo('guachinangos_con_atun','primer_plato',125)
 
 +almuerzo('pechuga','segundo_platos',330)
 +almuerzo('higado','segundo_plato',330)
@@ -96,21 +97,63 @@ pyDatalog.create_terms('desayuno,almuerzo,cena')
 
 # REGLAS
 
-pyDatalog.create_terms('X,Y,Z,W,A,B,C,C1,C2,C3,C4')
+pyDatalog.create_terms('X,Y,Z,W,A,B,C,C1,C2,C3,C4,SUM')
 pyDatalog.create_terms('combinacion_desayuno,combinacion_almuerzo,combinacion_cena')
 
-combinacion_desayuno(X,Y,Z,C1,C2,C3) <=  desayuno(X,'cereal',C1) & desayuno(Y,'lacteo',C2) & desayuno(Z,'bebida',C3)
+combinacion_desayuno(X,Y,Z,C1,C2,C3,SUM) <=  desayuno(X,'cereal',C1) & desayuno(Y,'lacteo',C2) & desayuno(Z,'bebida',C3) & (SUM == C1+C2+C3)
 
-combinacion_almuerzo(X,Y,Z,W,C1,C2,C3,C4) <= almuerzo(X,'primer_plato',C1) & almuerzo(Y,'segundo_plato',C2) & \
-    almuerzo(Z,'postre',C3) & almuerzo(W,'bebida',C4)
+combinacion_almuerzo(X,Y,Z,W,C1,C2,C3,SUM,C4) <= almuerzo(X,'primer_plato',C1) & almuerzo(Y,'segundo_plato',C2) & \
+    almuerzo(Z,'postre',C3) & almuerzo(W,'bebida',C4) & (SUM == C1+C2+C3+C4)
 
-combinacion_cena(X,Y,Z,W,C1,C2,C3,C4) <= cena(X,'primer_plato',C1) & cena(Y,'segundo_plato',C2) & cena(Z,'postre',C3) & \
-    cena(W,'bebida',C4)
+combinacion_cena(X,Y,Z,W,C1,C2,C3,SUM,C4) <= cena(X,'primer_plato',C1) & cena(Y,'segundo_plato',C2) & cena(Z,'postre',C3) & \
+    cena(W,'bebida',C4) & (SUM == C1+C2+C3+C4)
 
 ##print(combinacion_desayuno(X,Y,Z,C1,C2,C3))
 
-def sacar_al_azar(C1,C2,C3):
-	p = combinacion_desayuno(X,Y,Z,C1,C2,C3)
+
+def sacar_al_azar():
+	p = combinacion_desayuno(X,Y,Z,C1,C2,C3,SUM)
 	value = random.choice(p)
 	print(value)
 	return 0
+
+
+#terminar esta funcion
+def busqueda(t1,t2,t3):
+	tipo = 0
+	while(tipo<= 2):
+		if(tipo == 0):
+			total = t1
+			p = combinacion_desayuno(X,Y,Z,C1,C2,C3,SUM)
+		elif(tipo == 1):
+			total = t2
+			p = combinacion_almuerzo(X,Y,Z,W,C1,C2,C3,SUM,C4)
+		elif(tipo == 2):
+			total = t3
+			p = combinacion_cena(X,Y,Z,W,C1,C2,C3,SUM,C4)
+
+		p = sorted(p, key=lambda p: p[6])
+		temp = p[0]
+		tempo = temp[6]
+		temp = p[len(p)-1]
+		tempo2 = temp[6]
+
+		if(total > tempo2 ):
+			temp = p[len(p)-1]
+		elif(total < tempo):
+			temp = p[0]
+		else:
+			for x in range(len(p)):
+				if(tempo <= total):
+					temp = p[x]
+					tempo = temp[6]
+					pass
+				else:
+					break
+		print(temp)
+		tipo+= 1
+
+
+busqueda(415,510,1385)
+
+#sacar_al_azar()
