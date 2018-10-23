@@ -3,6 +3,8 @@ from pyDatalog import pyDatalog
 
 from pyDatalog.pyDatalog import assert_fact, load, ask
 
+import random
+
 # Variables
 pyDatalog.create_terms('C,V,L,E,F,P1,P2,P3,P,X,Y,Z,W,A1,A2,A3,A4')
 
@@ -465,8 +467,7 @@ Es_Cena(P1,P2,P3,A1,A2,A3) <= PP(P1) & SP(P2) & P(P3) & cantidad_calorias(P1,A1)
 # ----------------------------------------------------------------------------------------------
 
 def combinacion_desayunos():
-    print(Es_Desayuno(X, Y, Z, W, '300;400', '0;100', '100;200', '0;100'))
-    return 0
+	return Es_Desayuno(X, Y, Z, W, '300;400', '0;100', '100;200', '0;100')
 
 def combinacion_almuerzos():
     print(Es_Almuerzo(P1, P2, P3, '100;200', '100;200', '0;100'))
@@ -476,4 +477,10 @@ def combinacion_cenas():
     print(Es_Cena(P1, P2, P3, '0;100', '0;100', '0;100'))
     return 0
 
-combinacion_desayunos()
+def sacar_al_azar():
+	p = combinacion_desayunos()
+	value = random.choice(p)
+	print (value)
+	return 0
+
+sacar_al_azar()

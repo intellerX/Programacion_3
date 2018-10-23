@@ -1,5 +1,7 @@
 from pyDatalog import pyDatalog
 
+import random
+
 pyDatalog.create_terms('desayuno,almuerzo,cena')
 
 # Estructura desayuno: cereal, lacteos, y bebida
@@ -105,8 +107,10 @@ combinacion_almuerzo(X,Y,Z,W,C1,C2,C3,C4) <= almuerzo(X,'primer_plato',C1) & alm
 combinacion_cena(X,Y,Z,W,C1,C2,C3,C4) <= cena(X,'primer_plato',C1) & cena(Y,'segundo_plato',C2) & cena(Z,'postre',C3) & \
     cena(W,'bebida',C4)
 
-# print(combinacion_desayuno(X,Y,Z))
+##print(combinacion_desayuno(X,Y,Z,C1,C2,C3))
 
-# print(combinacion_almuerzo(X,Y,Z,W))
-
-#print(combinacion_cena(X,Y,Z,W,C1,C2,C3,C4))
+def sacar_al_azar(C1,C2,C3):
+	p = combinacion_desayuno(X,Y,Z,C1,C2,C3)
+	value = random.choice(p)
+	print(value)
+	return 0

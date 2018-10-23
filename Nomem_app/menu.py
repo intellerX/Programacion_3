@@ -1,4 +1,5 @@
 from pyDatalog import  pyDatalog, pyEngine
+import menu
 import testing
 import ui
 import operaciones
@@ -20,7 +21,7 @@ def main():
             t1 = total *(3/8)
             t2 = total *(3/8)
             t3 = total *(2/8)
-
+            testing.sacar_al_azar(t1,t2,t3)
 
         elif opcion == '2':
             ui.instrucciones()
@@ -31,5 +32,4 @@ def main():
             print("opcion no encontrada")
 
 
-if __name__ == '__main__':
-    main()
+main()
