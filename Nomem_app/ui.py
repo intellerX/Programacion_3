@@ -9,7 +9,7 @@ def mensaje_salida():
     limpiar_pantalla()
     print(""" 
 			----------------------------------------------------------------------------
-									Usted ha salido de la aplicacion
+									Usted ha salido de la aplicacion S+E=<3
 			----------------------------------------------------------------------------
 	""")
 
@@ -25,23 +25,34 @@ def menu_principal():
 			2. Instrucciones de uso
 			0. Salir del programa
 	""")
-    opcion = raw_input("    Digite su opcion: ")
+    opcion = input("    Digite su opcion: ")
     return opcion
 
 def ingresar_genero():
-    genero = float(input("    Digite su opcion: "))
+    genero = input("    Digite su opcion: ")   #Organizar genero	
     return genero
 
 def ingresar_edad():
     edad = float(input("    Ingrese su edad: "))
+    while(edad<10.0 or edad>80.0):
+    	edad = float(input("    Ingrese su edad: "))
+    	pass
     return edad
 
 def ingresar_peso():
-    peso = float(input("    Ingrese su peso en kilogramos: "))
-    return peso
+	peso = float(input("    Ingrese su peso en kilogramos: "))
+	while(peso<40.0or peso>150.0):
+		peso = float(input("    Ingrese su peso en kilogramos: "))
+		pass
+	return peso
 
-def ingresar_estatura():
+    
+
+def ingresar_estatura():    
     estatura = float(input("    Ingrese su estatura en centimetros: "))
+    while (estatura<150.0 or estatura>210.0):
+    	estatura = float(input("    Ingrese su estatura en centimetros: "))
+    	pass
     return estatura
 
 def ingresar_datos_usuario():
@@ -110,3 +121,5 @@ def instrucciones():
            -----------------------------------------------------------------------------
             """)
     return 0
+
+
